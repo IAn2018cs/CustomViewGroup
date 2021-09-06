@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ripple_cal_btn_equal.xml" value="0.234375" />
+        <entry key="app/src/main/res/drawable/ripple_cal_btn_num.xml" value="0.234375" />
+        <entry key="app/src/main/res/drawable/ripple_cal_btn_operator.xml" value="0.234375" />
+        <entry key="app/src/main/res/drawable/shape_cal_bg.xml" value="0.234375" />
+        <entry key="app/src/main/res/drawable/shape_cal_btn_bg.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
