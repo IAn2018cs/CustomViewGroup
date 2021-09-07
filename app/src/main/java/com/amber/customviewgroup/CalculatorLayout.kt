@@ -36,7 +36,7 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
     val keyboardBackgroundView = View(context).apply {
         background = ResourcesCompat.getDrawable(resources, R.drawable.shape_cal_btn_bg, null)
         layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        setPadding(14.dp, 10.dp, 14.dp, 10.dp)
+        setPadding(12.dp, 12.dp, 12.dp, 12.dp)
         addView(this)
     }
 
@@ -49,10 +49,10 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
                 ResourcesCompat.getDrawable(resources, R.drawable.ripple_cal_btn_num, null)
             layoutParams =
                 MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT).apply {
-                    leftMargin = 2.dp
-                    rightMargin = 2.dp
-                    topMargin = 6.dp
-                    bottomMargin = 6.dp
+                    leftMargin = 3.dp
+                    rightMargin = 3.dp
+                    topMargin = 3.dp
+                    bottomMargin = 3.dp
                 }
             isClickable = true
             setTextAppearance(context, R.style.StyleCalBtn)
@@ -69,10 +69,8 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
                 ResourcesCompat.getDrawable(resources, R.drawable.ripple_cal_btn_operator, null)
             layoutParams =
                 MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT).apply {
-                    leftMargin = 2.dp
-                    rightMargin = 2.dp
-                    topMargin = 2.dp
-                    bottomMargin = 2.dp
+                    leftMargin = 3.dp
+                    rightMargin = 3.dp
                 }
             isClickable = true
             setTextAppearance(context, R.style.StyleCalOperator)
