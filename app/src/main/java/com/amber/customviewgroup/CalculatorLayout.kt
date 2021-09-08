@@ -2,11 +2,12 @@ package com.amber.customviewgroup
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.marginBottom
 import androidx.core.view.marginLeft
@@ -17,7 +18,7 @@ import androidx.core.view.marginTop
  * Created by chenshuai on 2021/9/5
  */
 @SuppressLint("SetTextI18n")
-class CalculatorLayout(context: Context) : CustomViewGroup(context) {
+class CalculatorLayout(context: Context, /* 加上 AttributeSet 参数可以让 Android Studio 支持预览，不过效果不好 */ attrs: AttributeSet? = null) : CustomViewGroup(context,attrs) {
 
     val etResult = AppCompatEditText(context).apply {
         typeface = ResourcesCompat.getFont(context, R.font.comfortaa_regular)
@@ -41,12 +42,9 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
     }
 
     @SuppressLint("ViewConstructor")
-    class NumButton(context: Context, text: String, parent: ViewGroup) : AppCompatTextView(context) {
+    class NumButton(context: Context, text: String, parent: ViewGroup) : AppCompatButton(context.toTheme(R.style.Theme_CalBtn), null, androidx.appcompat.R.attr.buttonStyle) {
         init {
             setText(text)
-            gravity = Gravity.CENTER
-            background =
-                ResourcesCompat.getDrawable(resources, R.drawable.ripple_cal_btn_num, null)
             layoutParams =
                 MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT).apply {
                     leftMargin = 3.dp
@@ -54,26 +52,19 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
                     topMargin = 3.dp
                     bottomMargin = 3.dp
                 }
-            isClickable = true
-            setTextAppearance(context, R.style.StyleCalBtn)
             parent.addView(this)
         }
     }
 
     @SuppressLint("ViewConstructor")
-    class OperatorButton(context: Context, text: String, parent: ViewGroup) : AppCompatTextView(context) {
+    class OperatorButton(context: Context, text: String, parent: ViewGroup) : AppCompatButton(context.toTheme(R.style.Theme_StyleCalOperator), null, androidx.appcompat.R.attr.buttonStyle) {
         init {
             setText(text)
-            gravity = Gravity.CENTER
-            background =
-                ResourcesCompat.getDrawable(resources, R.drawable.ripple_cal_btn_operator, null)
             layoutParams =
                 MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT).apply {
                     leftMargin = 3.dp
                     rightMargin = 3.dp
                 }
-            isClickable = true
-            setTextAppearance(context, R.style.StyleCalOperator)
             parent.addView(this)
         }
     }

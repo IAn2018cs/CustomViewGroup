@@ -2,11 +2,14 @@ package com.amber.customviewgroup
 
 import android.content.Context
 import android.content.res.Resources
+import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import androidx.annotation.StyleRes
+import androidx.appcompat.view.ContextThemeWrapper
 import androidx.core.view.*
 
 /**
@@ -24,7 +27,10 @@ val Float.sp
         Resources.getSystem().displayMetrics
     )
 
-abstract class CustomViewGroup(context: Context) : ViewGroup(context) {
+// 可以将 xml 中的 style 设置到 theme 上，这样 obtainStyledAttributes 的时候就可以使用设置的 style 了
+fun Context.toTheme(@StyleRes style: Int) = ContextThemeWrapper(this, style)
+
+abstract class CustomViewGroup(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : ViewGroup(context, attrs, defStyleAttr) {
 
     protected val View.measuredWidthWithMargins get() = measuredWidth + marginStart + marginEnd
 
