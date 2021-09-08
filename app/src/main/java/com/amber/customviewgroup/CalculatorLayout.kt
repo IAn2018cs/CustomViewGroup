@@ -126,7 +126,7 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
 
         // 测量背景
         keyboardBackgroundView.measure(
-            measuredWidth.toExactlyMeasureSpec(),
+            keyboardBackgroundView.defaultWidthMeasureSpec(this),
             keyboardHeight.toExactlyMeasureSpec()
         )
 
@@ -151,7 +151,7 @@ class CalculatorLayout(context: Context) : CustomViewGroup(context) {
 
         // 测量 EditText
         etResult.measure(
-            measuredWidth.toExactlyMeasureSpec(),
+            etResult.defaultWidthMeasureSpec(this),
             editTextHeight.toExactlyMeasureSpec()
         )
 
