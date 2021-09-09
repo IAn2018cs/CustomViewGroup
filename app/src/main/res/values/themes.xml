@@ -16,10 +16,10 @@
     </style>
 
     <style name="Theme.CalBtn" parent="Theme.CustomViewGroup">
-        <item name="buttonStyle">@style/StyleCalBtn</item>
+        <item name="android:buttonStyle">@style/StyleCalBtn</item>
     </style>
 
     <style name="Theme.StyleCalOperator" parent="Theme.CustomViewGroup">
-        <item name="buttonStyle">@style/StyleCalOperator</item>
+        <item name="android:buttonStyle">@style/StyleCalOperator</item>
     </style>
 </resources>

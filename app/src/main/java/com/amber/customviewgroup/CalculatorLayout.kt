@@ -18,7 +18,7 @@ import androidx.core.view.marginTop
  * Created by chenshuai on 2021/9/5
  */
 @SuppressLint("SetTextI18n")
-class CalculatorLayout(context: Context, /* 加上 AttributeSet 参数可以让 Android Studio 支持预览，不过效果不好 */ attrs: AttributeSet? = null) : CustomViewGroup(context,attrs) {
+class CalculatorLayout(context: Context, /* 加上 AttributeSet 参数可以让 Android Studio 支持预览，不过效果不好 */ attrs: AttributeSet? = null) : CustomViewGroup(context, attrs) {
 
     val etResult = AppCompatEditText(context).apply {
         typeface = ResourcesCompat.getFont(context, R.font.comfortaa_regular)
@@ -42,7 +42,7 @@ class CalculatorLayout(context: Context, /* 加上 AttributeSet 参数可以让 
     }
 
     @SuppressLint("ViewConstructor")
-    class NumButton(context: Context, text: String, parent: ViewGroup) : AppCompatButton(context.toTheme(R.style.Theme_CalBtn), null, androidx.appcompat.R.attr.buttonStyle) {
+    class NumButton(context: Context, text: String, parent: ViewGroup) : AppCompatButton(context.toTheme(R.style.Theme_CalBtn), null, android.R.attr.buttonStyle) {
         init {
             setText(text)
             layoutParams =
@@ -57,7 +57,7 @@ class CalculatorLayout(context: Context, /* 加上 AttributeSet 参数可以让 
     }
 
     @SuppressLint("ViewConstructor")
-    class OperatorButton(context: Context, text: String, parent: ViewGroup) : AppCompatButton(context.toTheme(R.style.Theme_StyleCalOperator), null, androidx.appcompat.R.attr.buttonStyle) {
+    class OperatorButton(context: Context, text: String, parent: ViewGroup) : AppCompatButton(context.toTheme(R.style.Theme_StyleCalOperator), null, android.R.attr.buttonStyle) {
         init {
             setText(text)
             layoutParams =
